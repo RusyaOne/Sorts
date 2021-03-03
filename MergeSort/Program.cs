@@ -12,7 +12,7 @@ namespace Sorts
             mergeSort.Sort(ref array);
 
             foreach (int element in array)
-                Console.Write(element + ", ");
+                Console.Write(element + " ");
         }
     }
 }

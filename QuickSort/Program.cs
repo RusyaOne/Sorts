@@ -18,8 +18,33 @@ namespace QuickSort
                 return;
             }
 
-            int i = startIndex - 1;
+            int k = endIndex;
 
+            int i = 0;
+            int j = k;
+
+            while(true)
+            {
+                while (i < k && arr[i] <= arr[k])
+                {
+                    i++;
+                }
+
+                while (j > 0 && arr[j] >= arr[k])
+                {
+                    j--;
+                }
+
+                if (i >= j)
+                {
+                    break;
+                }
+
+                Swap(ref arr[i], ref arr[j]);
+            }
+
+            Swap(ref arr[i], ref arr[k]);
+            /*
             for (int j = startIndex; j <= endIndex; j++)
             {
                 if (arr[j] <= arr[endIndex])
@@ -28,6 +53,7 @@ namespace QuickSort
                     Swap(ref arr[i], ref arr[j]);
                 }
             }
+            */
 
             QuickSortArray(arr, startIndex, i-1);
             QuickSortArray(arr, i+1, endIndex);
